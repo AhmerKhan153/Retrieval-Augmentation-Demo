@@ -1,0 +1,10 @@
+[
+    {
+        "keywords": ["payment", "failed"],
+        "response": "Payment failed due to gateway/network issues."
+    },
+    {
+        "keywords": ["login", "locked"],
+        "response": "User locked out after multiple failed login attempts."
+    }
+]

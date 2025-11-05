@@ -1,0 +1,31 @@
+
+def build_success_prompt(docs, question):
+    context = ""
+    for i, doc in enumerate(docs):
+        summary = doc.payload.get('page_content').strip()
+        resolution = doc.payload.get('metadata').get("resolution", "No resolution available").strip()
+        context += (
+            f"Summary: {summary}\n"
+            f"Resolution: {resolution}\n\n"
+        )
+
+    successPrompt = f"""
+    You are an expert GDRFA customer support assistant.
+
+    Use ONLY the context below to answer the question.
+    Provide a positive, and actionable response.
+    Avoid repeating the question or restating the problem unnecessarily.
+    If the context is empty or unrelated, say: 
+    "I could not find any relevant information for your query. 
+    Please contact support for further assistance."
+    Do not request personal information.
+
+    Context:
+    {context}
+
+    Question:
+    {question}
+
+    Answer:
+    """
+    return successPrompt.strip()
