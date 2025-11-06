@@ -1,4 +1,4 @@
-# Incidents Chatbot (Retrieval-Augmentation-Demo)
+# RAG (Retrieval-Augmentation-Demo)
 
 This repository contains a retrieval-augmented incidents chatbot. The project is split into two main parts:
 
